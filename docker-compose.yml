@@ -1,0 +1,22 @@
+# Axolotl – Empowered by satoshiflow
+# Docker Compose configuration for local development
+
+version: '3.8'
+services:
+  # Placeholder service definitions
+  karma-service:
+    image: node:18
+    command: echo "karma-service placeholder"
+
+  neo4j:
+    image: neo4j:5
+    environment:
+      - NEO4J_AUTH=neo4j/neo4j
+
+  landrad-frontend:
+    image: node:18
+    command: echo "frontend placeholder"
+
+  landrad-backend:
+    image: node:18
+    command: echo "backend placeholder"
