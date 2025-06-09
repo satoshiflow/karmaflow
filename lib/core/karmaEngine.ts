@@ -19,7 +19,7 @@ export async function runKarmaPipeline(text: string, metadata?: KarmaMetadata): 
     const summary = 'Dies ist eine Zusammenfassung des Eingangstextes.'
     logger.debugLog(`📝 Summary: ${summary}`)
 
-    // Agent 3: Entitäten
+    // Agent 3: Entitätena
     const entities = [
       { name: 'Albert Einstein', type: 'Person', confidence: 0.95 },
       { name: 'Physik', type: 'Fachgebiet', confidence: 0.9 }

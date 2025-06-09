@@ -19,7 +19,8 @@ export class ContentSegmentationAgent {
 
   /**
    * Zerteilt den eingegebenen Text kontextsensitiv in Segmente.
-   * Aktuell: einfache Absatz-basierte Aufteilung mit Positionsmarkierung.
+   * Aktuell: Absatz-Aufteilung mit Positionsmarkierung.
+   * Es werden nur doppelte Zeilenumbrüche (\n{2,}) als Absatztrennung erkannt.
    */
   public process(input: string, metadata?: KarmaMetadata): ContentSegment[] {
     this.logger.debugLog('[ContentSegmentationAgent] Segmentierung beginnt')
@@ -40,4 +41,4 @@ export class ContentSegmentationAgent {
   }
 }
 
-export default ContentSegmentationAgent 
+export default ContentSegmentationAgent
