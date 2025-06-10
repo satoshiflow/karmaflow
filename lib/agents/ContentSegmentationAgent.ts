@@ -1,43 +1,47 @@
 // lib/agents/ContentSegmentationAgent.ts
 
-import { Logger } from '../utils/logger'
-import type { KarmaMetadata } from '../../types/karma'
+/**
+ * @file ContentSegmentationAgent.ts
+ * @description
+ * Diese Agentenklasse unterteilt Eingabetext in sinnvolle Segmente – z. B. nach Absätzen oder Sätzen –
+ * und bildet den Einstiegspunkt für die weitere semantische Analyse im KARMA-Multi-Agenten-Framework.
+ *
+ * @example
+ * const agent = new ContentSegmentationAgent(true)
+ * const result = agent.segment("Absatz 1.\n\nAbsatz 2.")
+ * console.log(result.segments) // Ausgabe: ["Absatz 1.", "Absatz 2."]
+ *
+ * @author
+ * KI-generiert mit menschlicher Nachbearbeitung
+ *
+ * @version 1.0.0
+ * @date 2025-06-08
+ *
+ * @usage
+ * Dieser Agent ist Teil der KARMA-Verarbeitungskette und wird typischerweise als erster Schritt
+ * vor der Zusammenfassung, Entitätserkennung und Tripelbildung verwendet.
+ */
 
-export interface ContentSegment {
-  id: number
-  text: string
-  start: number
-  end: number
-}
 
 export class ContentSegmentationAgent {
-  private logger: Logger
+  constructor(private debug = false) {}
 
-  constructor(debug = false) {
-    this.logger = new Logger({ level: 'INFO', debug })
-  }
+  segment(text: string): { segments: string[] } {
+    if (this.debug) {
+      console.log('[ContentSegmentationAgent] Eingabetext:', text)
+    }
 
-  /**
-   * Zerteilt den eingegebenen Text kontextsensitiv in Segmente.
-   * Aktuell: Absatz-Aufteilung mit Positionsmarkierung.
-   * Es werden nur doppelte Zeilenumbrüche (\n{2,}) als Absatztrennung erkannt.
-   */
-  public process(input: string, metadata?: KarmaMetadata): ContentSegment[] {
-    this.logger.debugLog('[ContentSegmentationAgent] Segmentierung beginnt')
+    // Segmentieren nach Absätzen (zwei oder mehr Zeilenumbrüche)
+    const segments = text.split(/\n{2,}/).map(s => s.trim()).filter(Boolean)
 
-    const segments: ContentSegment[] = []
-    const paragraphs = input.split(/\n{2,}/)
-    let position = 0
+    // Fallback: Satzweise Trennung
+    if (segments.length <= 1) {
+      return {
+        segments: text.match(/[^.!?]+[.!?]+/g) ?? [text]
+      }
+    }
 
-    paragraphs.forEach((text, index) => {
-      const start = position
-      const end = position + text.length
-      segments.push({ id: index + 1, text: text.trim(), start, end })
-      position = end + 2 // für die nächste Absatzlänge + 2 für doppeltes \n
-      this.logger.debugLog(`→ Segment ${index + 1}: ${text.slice(0, 30)}...`)  
-    })
-
-    return segments
+    return { segments }
   }
 }
 

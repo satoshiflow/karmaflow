@@ -2,6 +2,17 @@
 // Axolotl – Empowered by satoshiflow
 // Agent #2: Content Summarization Agent
 
+/*
+ * File: SummarizationAgent.ts
+ * Description: Agent #2 – Responsible for generating context-aware summaries from segmented content.
+ * Usage: Used after content segmentation to reduce content length and improve understanding.
+ * Dependencies: None (LLM integration optional)
+ * Example:
+ *   const agent = new SummarizationAgent(true);
+ *   const result = agent.summarize("Marie Curie war eine berühmte Wissenschaftlerin...");
+ *   console.log(result.summary);
+ */
+
 import { Logger } from '../utils/logger'
 import { AgentError } from '../utils/errorTypes'
 

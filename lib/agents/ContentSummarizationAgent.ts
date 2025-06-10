@@ -1,6 +1,20 @@
 // Axolotl – Empowered by satoshiflow
 // ContentSummarizationAgent – Creates concise summaries for text segments
 
+/**
+ * @file ContentSummarizationAgent.ts
+ * @description
+ * Fasst einzelne Textsegmente oder ganze Dokumente sinnvoll zusammen und liefert eine kompakte Darstellung.
+ * Nutzt ggf. ein LLM (z. B. GPT oder Ollama) für kontextabhängige Zusammenfassungen.
+ *
+ * @example
+ * const agent = new ContentSummarizationAgent()
+ * const result = await agent.summarize("Langer Artikeltext...", { maxLength: 200 })
+ *
+ * @usage
+ * Wird direkt nach der Segmentierung eingesetzt, um den Inhalt für nachfolgende Agenten effizient vorzubereiten.
+ */
+
 import { Logger } from '../utils/logger'
 import { AgentError } from '../utils/errorTypes'
 

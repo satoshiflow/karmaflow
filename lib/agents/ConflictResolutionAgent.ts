@@ -1,6 +1,17 @@
 // Axolotl – Empowered by satoshiflow
 // ConflictResolutionAgent – Resolves conflicting triples and maintains graph consistency
 
+/*
+ * File: ConflictResolutionAgent.ts
+ * Description: Agent #6 – Resolves conflicting semantic triples based on confidence scores.
+ * Usage: Run after triple extraction to ensure consistency in the knowledge graph.
+ * Dependencies: SemanticTriple type, logging (optional)
+ * Example:
+ *   const agent = new ConflictResolutionAgent(true);
+ *   const resolved = agent.resolveConflicts(triples);
+ *   console.log(resolved);
+ */
+
 import { Logger } from '../utils/logger'
 import { AgentError } from '../utils/errorTypes'
 

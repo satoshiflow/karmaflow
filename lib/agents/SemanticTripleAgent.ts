@@ -1,6 +1,16 @@
 // Axolotl – Empowered by satoshiflow
 // SemanticTripleAgent – Transforms entities & relations into structured triples
 
+/**
+ * @file SemanticTripleAgent.ts
+ * @description
+ * Formt strukturierte Tripel in der Form (Subjekt, Prädikat, Objekt) basierend auf den vorherigen Agenten.
+ * Fügt Konfidenzwerte und weitere Metriken hinzu.
+ *
+ * @usage
+ * Zentraler Schritt zur Erstellung maschinenlesbarer Wissensdarstellungen.
+ */
+
 import { Logger } from '../utils/logger'
 import { AgentError } from '../utils/errorTypes'
 

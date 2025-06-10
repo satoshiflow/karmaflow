@@ -1,3 +1,13 @@
+/**
+ * @file IntegrationAgent.ts
+ * @description
+ * Führt die final validierten und alignierten Tripel in ein zentrales Zielsystem ein, z. B. einen Graph-Store oder RDF-Backend.
+ *
+ * @usage
+ * Schließt den KARMA-Verarbeitungszyklus ab und sorgt für eine saubere Persistierung.
+ */
+
+
 import { AlignedTriple } from './SchemaAlignmentAgent'
 import { Logger } from '../utils/logger'
 

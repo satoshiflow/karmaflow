@@ -1,6 +1,16 @@
 // Axolotl – Empowered by satoshiflow
 // QualityValidationAgent – Evaluates triple quality based on heuristics and metrics (Score-based)
 
+/**
+ * @file QualityValidationAgent.ts
+ * @description
+ * Bewertet Tripel hinsichtlich Qualität: Konfidenz, Klarheit, Relevanz. Optional konfigurierbar.
+ *
+ * @usage
+ * Bewertet die Datenqualität und entscheidet, ob ein Tripel für die Integration geeignet ist.
+ */
+
+
 import { Logger } from '../utils/logger'
 import { AgentError } from '../utils/errorTypes'
 

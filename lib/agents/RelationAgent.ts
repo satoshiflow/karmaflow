@@ -3,6 +3,16 @@
 // Dieser Agent erkennt semantische Beziehungen zwischen benannten Entitäten innerhalb eines Textabschnitts
 // und liefert Tripel in der Form (Subjekt, Prädikat, Objekt) mit einer Qualitätsbewertung.
 
+/**
+ * @file RelationAgent.ts
+ * @description
+ * Extrahiert semantische Beziehungen zwischen zuvor erkannten Entitäten aus Texten.
+ * Liefert potenzielle Prädikate, die zwei Entitäten sinnvoll verbinden.
+ *
+ * @usage
+ * Wird nach der Entitätserkennung eingesetzt, um relevante Verbindungen abzuleiten.
+ */
+
 import { Logger } from '../utils/logger'
 import { AgentError } from '../utils/errorTypes'
 

@@ -3,6 +3,20 @@
 // Dieser Agent identifiziert benannte Entitäten (Personen, Orte, Organisationen etc.)
 // innerhalb eines übergebenen Textes. Er nutzt eine Dummy-Logik zur Extraktion und bewertet die Qualität.
 
+/**
+ * @file EntityRecognitionAgent.ts
+ * @description
+ * Identifiziert benannte Entitäten (Personen, Orte, Organisationen, etc.) in Texten und versieht sie mit Typen und Konfidenzwerten.
+ *
+ * @example
+ * const agent = new EntityRecognitionAgent()
+ * const entities = agent.extractEntities("Albert Einstein war ein theoretischer Physiker.")
+ *
+ * @usage
+ * Wird nach der Zusammenfassung verwendet, um strukturierte Informationen zu extrahieren.
+ */
+
+
 import { Logger } from '../utils/logger'
 import { AgentError } from '../utils/errorTypes'
 

@@ -1,3 +1,12 @@
+/**
+ * @file SchemaAlignmentAgent.ts
+ * @description
+ * Mappt erkannte Entitäten und Relationen auf bestehende Ontologien oder Schemas.
+ *
+ * @usage
+ * Harmonisiert das Format der Ergebnisse, bevor sie in den Knowledge Graph integriert werden.
+ */
+
 export interface SemanticTriple {
   subject: string
   predicate: string
